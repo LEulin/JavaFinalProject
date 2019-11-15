@@ -6,11 +6,17 @@
 
 package leulinsonlinepharmacyui;
 
+import javax.swing.JOptionPane;
+import onlinepurchase.*;
+import leulinsonlinepharmacyui.LoginPanel1;
+
 /**
  *
  * @author eulinle_sd2022
  */
 public class SignUpPanel1 extends javax.swing.JFrame {
+    
+    LoginPanel1 wow = new LoginPanel1();
 
     /**
      * Creates new form Login
@@ -252,11 +258,31 @@ public class SignUpPanel1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        this.setVisible(false);
-        new LoginPanel1().setVisible(true);
-        String uName = username.getText();
-        String a = age.getText();
+        
+        String uname = username.getText();
         String pass = password.getText();
+        String age1 = age.getText();
+        
+        if(Integer.parseInt(age1) >=18 && Integer.parseInt(age1) <= 59){
+            wow.store.getUserList().add(new Adult(wow.store.getUserList().size()+1,uname,pass,Integer.parseInt(age1)));
+            
+            this.setVisible(false);
+            LoginPanel1 log = new LoginPanel1();
+            log.setVisible(true);
+        }
+        else if(Integer.parseInt(age1) >=60){
+            wow.store.getUserList().add(new Senior(wow.store.getUserList().size()+1,uname,pass,Integer.parseInt(age1)));
+            this.setVisible(false);
+            LoginPanel1 log = new LoginPanel1();
+            log.setVisible(true);
+        
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Can't register minor age!");
+        }
+        
+        
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed

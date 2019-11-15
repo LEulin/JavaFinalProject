@@ -5,6 +5,20 @@
  */
 package leulinsonlinepharmacyui;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import leulinsonlinepharmacyui.storage;
+import onlinepurchase.Adult;
+import onlinepurchase.MedicinesForAllergies;
+import onlinepurchase.MedicinesForBodyPain;
+import onlinepurchase.MedicinesForCough;
+import onlinepurchase.MedicinesForHeadache;
+import onlinepurchase.Orders;
+import onlinepurchase.Pharmacist;
+import onlinepurchase.Senior;
+import onlinepurchase.User;
+
 /**
  *
  * @author eulinle_sd2022
@@ -13,8 +27,34 @@ public class LoginPanel1 extends javax.swing.JFrame {
     /**
      * Creates new form LoginPanel1
      */
+    storage store = new storage();
+    storage store1 = new storage();
+    
+    
     public LoginPanel1() {
         initComponents();
+        this.setTitle("Log In");
+
+        store.getUserList().add(new Adult(1, "LEulin", "Simple", 19));
+        store.getUserList().add(new Adult(2, "Kokoy", "12345", 19));
+//        a.getUserList().add(new Senior(3, "Pong", "pn123", 62));
+//        a.getMedForBodyPain().add(new MedicinesForBodyPain(1, "Alaxan", "Ibuprofen", "Body Pain", 8.25, 100));
+//        a.getMedForBodyPain().add(new MedicinesForBodyPain(2, "Rexidol", "Paracetamol", "Body Pain", 15.50, 75));
+//        a.getMedForBodyPain().add(new MedicinesForBodyPain(3, "Medicol", "Ibuprofen", "Body Pain", 6.00, 100));
+//        a.getMedForAllergies().add(new MedicinesForAllergies(1, "Allerkid", "Cetirizine", "Allergies", 8, 50));
+//        a.getMedForAllergies().add(new MedicinesForAllergies(2, "Allerta", "Loratadine", "Allergies", 16, 50));
+//        a.getMedForAllergies().add(new MedicinesForAllergies(3, "Allerta", "Mometasone", "Allergies", 24, 50));
+//        a.getMedForCough().add(new MedicinesForCough(1, "Solmux", "Carbocisteine", "Cough", 17, 50));
+//        a.getMedForCough().add(new MedicinesForCough(2, "Myracof", "Ambroxol", "Cough", 22, 50));
+//        a.getMedForCough().add(new MedicinesForCough(3, "Expel OD", "Ambroxol", "Cough", 29, 50));
+//        a.getMedForHeadache().add(new MedicinesForHeadache(1, "Biogesic 325", "Paracetamol", "Headache", 6, 50));
+//        a.getMedForHeadache().add(new MedicinesForHeadache(2, "Biogesic", "Paracetamol", "Headache", 8, 50));
+//        a.getMedForHeadache().add(new MedicinesForHeadache(3, "Fevertab", "Paracetamol", "Headache", 5, 50));
+//        a.getOrderList().add(new Orders(1, 1, 1, "Body Pain", 4, 33));
+//        a.getOrderList().add(new Orders(2, 3, 2, "Body Pain", 6, 50));
+//        a.getOrderList().add(new Orders(3, 2, 2, "Headache", 6, 40));
+        
+        
     }
     
     
@@ -38,7 +78,7 @@ public class LoginPanel1 extends javax.swing.JFrame {
         loginButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         sBTN = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         logBTN = new javax.swing.JButton();
@@ -123,7 +163,7 @@ public class LoginPanel1 extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPasswordField1)
+                                    .addComponent(password)
                                     .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(187, 187, 187)
@@ -145,7 +185,7 @@ public class LoginPanel1 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
@@ -225,10 +265,35 @@ public class LoginPanel1 extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        this.setVisible(false);
-        new Dashboard().setVisible(true);
+    
+        String uname = username.getText();
+        String pass = password.getText();
+        int count = 0;
+        
+        for(int i = 0 ; i<store.getUserList().size();i++){
+            if(uname.equals(store.getUserList().get(i).getUserName()) && pass.equals(store.getUserList().get(i).getPassword())){
+                JOptionPane.showMessageDialog(null, "Logged In!");
+                this.setVisible(false);
+                new Dashboard().setVisible(true);
+            
+            }
+            else{
+                count ++;
+            }
+        }
+        
+        if(count==store.getUserList().size()){
+            JOptionPane.showMessageDialog(null,"Invalid Credentials!");
+        
+        }
+        
+        
+    
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
+
+    
     /**
      * @param args the command line arguments
      */
@@ -260,8 +325,8 @@ public class LoginPanel1 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new LoginPanel1().setVisible(true);
-//                new SignUpPanel1().setVisible(true);
+                new LoginPanel1().setVisible(true);               
+                              
             }
         });
     }
@@ -276,9 +341,9 @@ public class LoginPanel1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JButton logBTN;
     private javax.swing.JButton loginButton;
+    private javax.swing.JPasswordField password;
     private javax.swing.JButton sBTN;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

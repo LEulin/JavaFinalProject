@@ -32,10 +32,25 @@ public class ViewMedicines extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        MedicineForCough1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        MedicineForCough2 = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        MedicineForCough4 = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        MedicineForCough = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        MedicineForCough3 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -56,6 +71,21 @@ public class ViewMedicines extends javax.swing.JFrame {
 
         jCheckBoxMenuItem3.setSelected(true);
         jCheckBoxMenuItem3.setText("jCheckBoxMenuItem3");
+
+        MedicineForCough1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Solmux", "Carbocisteine", "Cough", "50", "17.00"},
+                {"2", "Myracof", "Ambroxol", "Cough", "50", "22.00"},
+                {"3", "Expel OD", "Ambroxol", "Cough", "50", "29.00"}
+            },
+            new String [] {
+                "Medicine ID", "Brand Name", "Generic Name", "Medicine Type", "Quantity", "Price"
+            }
+        ));
+        jScrollPane2.setViewportView(MedicineForCough1);
+
+        jLabel2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel2.setText("Medicine for Cough");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(485, 600));
@@ -98,6 +128,66 @@ public class ViewMedicines extends javax.swing.JFrame {
             }
         });
 
+        MedicineForCough2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Solmux", "Carbocisteine", "Cough", "50", "17.00"},
+                {"2", "Myracof", "Ambroxol", "Cough", "50", "22.00"},
+                {"3", "Expel OD", "Ambroxol", "Cough", "50", "29.00"}
+            },
+            new String [] {
+                "Medicine ID", "Brand Name", "Generic Name", "Medicine Type", "Quantity", "Price"
+            }
+        ));
+        jScrollPane3.setViewportView(MedicineForCough2);
+
+        MedicineForCough4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Alaxan", "Ibuprofen", "Body Pain", "50", "8.25"},
+                {"2", "Rexidol", "Paracetamol", "Body Pain", "50", "15.5"},
+                {"3", "Medicol", "Ibuprofen", "Body Pain", "50", "5.00"}
+            },
+            new String [] {
+                "Medicine ID", "Brand Name", "Generic Name", "Medicine Type", "Quantity", "Price"
+            }
+        ));
+        jScrollPane5.setViewportView(MedicineForCough4);
+
+        MedicineForCough.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Allerkid", "Ceterizine", "Allergies", "50", "8.00"},
+                {"2", "Allerta", "Loratadine", "Allergies", "50", "16.00"},
+                {"3", "Allerta", "Mometasone", "Allergies", "50", "24.00"}
+            },
+            new String [] {
+                "Medicine ID", "Brand Name", "Generic Name", "Medicine Type", "Quantity", "Price"
+            }
+        ));
+        jScrollPane1.setViewportView(MedicineForCough);
+
+        MedicineForCough3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Biogesic 325", "Carbocisteine", "Headache", "50", "6.00"},
+                {"2", "Biogesic", "Ambroxol", "Headache", "50", "8.00"},
+                {"3", "Fevertab", "Ambroxol", "Paracetamol", "50", "5.00"}
+            },
+            new String [] {
+                "Medicine ID", "Brand Name", "Generic Name", "Medicine Type", "Quantity", "Price"
+            }
+        ));
+        jScrollPane4.setViewportView(MedicineForCough3);
+
+        jLabel3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel3.setText("Medicine for Cough");
+
+        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel4.setText("Medicine for Cough");
+
+        jLabel5.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel5.setText("Medicine for Cough");
+
+        jLabel6.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel6.setText("Medicine for Cough");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,8 +195,17 @@ public class ViewMedicines extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backBTN)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backBTN)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +213,23 @@ public class ViewMedicines extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backBTN)
-                .addContainerGap(486, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,7 +240,7 @@ public class ViewMedicines extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
         );
 
         pack();
@@ -172,13 +287,28 @@ public class ViewMedicines extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable MedicineForCough;
+    private javax.swing.JTable MedicineForCough1;
+    private javax.swing.JTable MedicineForCough2;
+    private javax.swing.JTable MedicineForCough3;
+    private javax.swing.JTable MedicineForCough4;
     private javax.swing.JButton backBTN;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
 }

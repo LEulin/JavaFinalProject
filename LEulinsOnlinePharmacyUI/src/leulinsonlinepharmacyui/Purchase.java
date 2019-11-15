@@ -32,6 +32,13 @@ public class Purchase extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        coughBTN = new javax.swing.JRadioButton();
+        headacheBTN = new javax.swing.JRadioButton();
+        bodypainBTN = new javax.swing.JRadioButton();
+        allergiesBTN = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        id = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(485, 600));
@@ -74,14 +81,61 @@ public class Purchase extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel2.setText("Enter Medicine to Purchase:");
+
+        coughBTN.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        coughBTN.setText("Medicine for Cough");
+        coughBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coughBTNActionPerformed(evt);
+            }
+        });
+
+        headacheBTN.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        headacheBTN.setText("Medicine for Headache");
+
+        bodypainBTN.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        bodypainBTN.setText("Medicine for Body Pain");
+
+        allergiesBTN.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        allergiesBTN.setText("Medicine for Allergies");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setText("Enter Medicine ID you want to purchase:");
+
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBTN)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backBTN))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bodypainBTN)
+                            .addComponent(allergiesBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headacheBTN)
+                            .addComponent(coughBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -90,7 +144,21 @@ public class Purchase extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(backBTN)
-                .addGap(0, 597, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(jLabel2)
+                .addGap(27, 27, 27)
+                .addComponent(coughBTN)
+                .addGap(26, 26, 26)
+                .addComponent(headacheBTN)
+                .addGap(27, 27, 27)
+                .addComponent(bodypainBTN)
+                .addGap(27, 27, 27)
+                .addComponent(allergiesBTN)
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 264, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,6 +179,14 @@ public class Purchase extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_backBTNActionPerformed
+
+    private void coughBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coughBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coughBTNActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,8 +224,15 @@ public class Purchase extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton allergiesBTN;
     private javax.swing.JButton backBTN;
+    private javax.swing.JRadioButton bodypainBTN;
+    private javax.swing.JRadioButton coughBTN;
+    private javax.swing.JRadioButton headacheBTN;
+    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
